@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 export default function ColorChanger(props) {
   return (
@@ -10,6 +11,9 @@ export default function ColorChanger(props) {
   )
 }
 
-
+ColorChanger.propTypes = {
+  update: PropTypes.func.isRequired,
+  fontColor: PropTypes.string.isRequired,
+}
 
 /* THIS IS A STATELESS FUNCTIONAL COMPONENT!!! */
