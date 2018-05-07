@@ -11,16 +11,22 @@ class App extends Component {
   constructor(){
     super()
       this.state = {
-        fontColor : 'red',
+        fontColor : 'black',
         fontSize : 12,
         fontFamily : 'monospace',
         allowEdit : true,
       }
+      this.updateColor = this.updateColor.bind(this)
+      this.updateSize = this.updateSize.bind(this)
   }
 
-  // updateColor
+  updateColor(val){
+    this.setState({ fontColor : val })
+  }
 
-  // updateSize
+  updateSize(val){
+    this.setState({ fontSize : val })
+  }
 
   // updateFamily
 
@@ -31,9 +37,9 @@ class App extends Component {
       <div>
         <div className="headerBar">
           { /* Render EditToggle */ }
-          { /* Render ColorChanger */ }
-          { /* Render SizeChanger */}
-         { /* Render FamilyChanger */}
+          <ColorChanger update={this.updateColor} fontColor={this.state.fontColor}/>
+          <SizeChanger update={this.updateSize} fontSize={this.state.fontSize}/>
+          <FamilyChanger fontFamily={this.state.fontFamily}/>
         </div>
         <div className="textArea">
           <TextContainer 

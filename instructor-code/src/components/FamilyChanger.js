@@ -9,6 +9,3 @@ export default function FamilyChanger(props) {
     </select>
   )
 }
-
-
-/* THIS IS A STATELESS FUNCTIONAL COMPONENT!!! */
